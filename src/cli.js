@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import c from "./Colours.js"
 import console from "node:console"
 
