@@ -37,7 +37,7 @@
     "clean": "rm -rfv ./dist",
     "build": "pnpm run clean && mkdir -pv ./dist && pnpm pack --pack-destination ./dist/",
     "update": "pnpm up -L",
-    "submit": "pnpm publish --access public --//registry.npmjs.org/:_authToken=\"${NPM_ACCESS_TOKEN}\"",
+    "submit": "pnpm publish --access public --//registry.npmjs.org/:_authToken=\"${NPM_ACCESS_TOKEN}\""
   },
   "devDependencies": {
     "@gesslar/uglier": "^0.0.9",
