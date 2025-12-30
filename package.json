@@ -27,6 +27,9 @@
     "src/",
     "UNLICENSE.txt"
   ],
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "lint": "eslint src/",
     "test": "node test/test.js",
