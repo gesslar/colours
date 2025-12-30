@@ -2,7 +2,7 @@
   "name": "@gesslar/colours",
   "description": "256 colours for your terminal expressions. You're welcome.",
   "author": "gesslar",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "license": "Unlicense",
   "homepage": "https://github.com/gesslar/colours#readme",
   "repository": {
