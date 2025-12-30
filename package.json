@@ -36,6 +36,7 @@
     "test-colours": "node src/cli.js",
     "clean": "rm -rfv ./dist",
     "build": "pnpm run clean && mkdir -pv ./dist && pnpm pack --pack-destination ./dist/",
+    "update": "pnpm up -L",
     "submit": "pnpm publish --access public"
   },
   "devDependencies": {
