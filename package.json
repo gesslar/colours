@@ -35,8 +35,8 @@
     "test": "node test/test.js",
     "test-colours": "node src/cli.js",
     "clean": "rm -rfv ./dist",
-    "build": "npm run clean && mkdir -pv ./dist && npm pack --pack-destination ./dist/",
-    "submit": "npm publish --access public"
+    "build": "pnpm run clean && mkdir -pv ./dist && pnpm pack --pack-destination ./dist/",
+    "submit": "pnpm publish --access public"
   },
   "devDependencies": {
     "@gesslar/uglier": "^0.0.9",
