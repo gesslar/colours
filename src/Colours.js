@@ -24,8 +24,8 @@ const styles = /\{<(?<open>[BRDFIORSU]+)\}|\{(?<close>[BRDFIORSU]+)>}/g
  * Template literal function for colorizing terminal output with ANSI escape codes.
  * Processes color codes, styles, aliases, and reset commands in a clean pipeline.
  *
- * @param {Array<*>} strings - Template literal string parts
- * @param {...any} values - Template literal interpolated values
+ * @param {Array<string>} strings - Template literal string parts
+ * @param {...unknown} values - Template literal interpolated values
  * @returns {string} Formatted string with ANSI escape codes
  * @example
  * c`{F045}Running:{/} {red}${testName}{/}`
@@ -75,7 +75,7 @@ c.alias = {
  * Convert alias codes to their replacement values
  *
  * @param {string} code - The matched alias code (e.g., "{red}")
- * @param {...any} args - Regex match arguments, last element contains named groups
+ * @param {...string} args - Regex match arguments, last element contains named groups
  * @returns {string} The replacement code or original if no alias found
  */
 function convertAliases(code, ...args) {
@@ -115,7 +115,7 @@ const onStyles = new Map([
  * Convert style codes to ANSI escape sequences
  *
  * @param {string} _ - The matched style code (e.g., "{<BU}" or "{BU>}")
- * @param {...any} args - Regex match arguments, last element contains named groups
+ * @param {...string} args - Regex match arguments, last element contains named groups
  * @returns {string} ANSI escape sequences for the requested styles
  */
 function convertStyles(_, ...args) {
@@ -139,7 +139,7 @@ function convertStyles(_, ...args) {
  * Convert numbered color codes to ANSI escape sequences
  *
  * @param {string} code - The matched color code (e.g., "{F045}" or "{B196}")
- * @param {...any} args - Regex match arguments, last element contains named groups
+ * @param {...string} args - Regex match arguments, last element contains named groups
  * @returns {string} ANSI escape sequence for the color or original code if invalid
  */
 function convertNumbered(code, ...args) {

@@ -1,13 +1,10 @@
 {
   "name": "@gesslar/colours",
-  "version": "0.0.1",
-  "description": "256 colours for your terminal expressions. you're welcome.",
+  "description": "256 colours for your terminal expressions. You're welcome.",
   "author": "gesslar",
-  "publisher": "gesslar",
-  "type": "module",
+  "version": "0.0.1",
   "license": "Unlicense",
-  "main": "src/Colours.js",
-  "bin": "src/cli.js",
+  "homepage": "https://github.com/gesslar/colours#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gesslar/colours.git"
@@ -22,26 +19,24 @@
     "trifle",
     "monkeynado"
   ],
-  "bugs": {
-    "url": "https://github.com/gesslar/colours/issues"
-  },
-  "homepage": "https://github.com/gesslar/colours#readme",
-    "devDependencies": {
-    "@stylistic/eslint-plugin": "^5.2.3",
-    "@typescript-eslint/eslint-plugin": "^8.33.0",
-    "@typescript-eslint/parser": "^8.33.0",
-    "eslint": "^9.28.0",
-    "eslint-plugin-jsdoc": "^61.5.0"
-  },
+  "packageManager": "pnpm@10.26.2",
+  "type": "module",
+  "main": "src/Colours.js",
+  "bin": "src/cli.js",
   "files": [
     "src/",
     "UNLICENSE.txt"
   ],
   "scripts": {
+    "lint": "eslint src/",
     "test": "node test/test.js",
     "test-colours": "node src/cli.js",
     "clean": "rm -rfv ./dist",
     "build": "npm run clean && mkdir -pv ./dist && npm pack --pack-destination ./dist/",
     "submit": "npm publish --access public"
+  },
+  "devDependencies": {
+    "@gesslar/uglier": "^0.0.9",
+    "eslint": "^9.39.2"
   }
 }
