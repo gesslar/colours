@@ -6,7 +6,7 @@
     "email": "bmw@gesslar.dev",
     "url": "https://gesslar.dev"
   },
-  "version": "0.7.1",
+  "version": "0.8.0",
   "license": "Unlicense",
   "homepage": "https://github.com/gesslar/colours#readme",
   "repository": {
@@ -43,7 +43,8 @@
   },
   "scripts": {
     "lint": "eslint src/",
-    "test": "node --test test/Colours.test.js",
+    "test": "node --test test/**/*.test.js",
+    "test:coverage": "node --experimental-config-file=node.config.json --experimental-test-coverage --test-timeout=3000 --test test/**/*.test.js",
     "test:visual": "node test/test.js",
     "test-colours": "node src/cli.js",
     "clean": "rm -rfv ./dist",
