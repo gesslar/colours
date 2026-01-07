@@ -23,12 +23,19 @@
     "trifle",
     "monkeynado"
   ],
-  "packageManager": "pnpm@10.26.2",
+  "packageManager": "pnpm@10.27.0",
   "type": "module",
   "main": "src/Colours.js",
   "bin": "src/cli.js",
+  "exports": {
+    ".": {
+      "types": "./types/Colours.d.ts",
+      "default": "./src/Colours.js"
+    }
+  },
   "files": [
     "src/",
+    "types/",
     "UNLICENSE.txt"
   ],
   "engines": {
@@ -36,7 +43,8 @@
   },
   "scripts": {
     "lint": "eslint src/",
-    "test": "node test/test.js",
+    "test": "node --test test/Colours.test.js",
+    "test:visual": "node test/test.js",
     "test-colours": "node src/cli.js",
     "clean": "rm -rfv ./dist",
     "build": "pnpm run clean && mkdir -pv ./dist && pnpm pack --pack-destination ./dist/",
@@ -45,10 +53,12 @@
     "pr": "gt submit -p --ai",
     "patch": "pnpm version patch",
     "minor": "pnpm version minor",
-    "major": "pnpm version major"
+    "major": "pnpm version major",
+    "types": "node -e \"require('fs').rmSync('types',{recursive:true,force:true});\" && tsc -p tsconfig.types.json"
   },
   "devDependencies": {
-    "@gesslar/uglier": "^0.6.0",
-    "eslint": "^9.39.2"
+    "@gesslar/uglier": "^0.5.1",
+    "eslint": "^9.39.2",
+    "typescript": "^5.9.3"
   }
 }
