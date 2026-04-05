@@ -186,13 +186,13 @@ const debug = {
 - Semantic aliases you define
 - Lighter weight, focused scope
 
-## License
-
-[The Unlicense](https://unlicense.org/), because colours belong to everybody
-and if you disagree, well, you probably _would_ download a car. 🤨
-
 ---
 
 _"I want green here, but which green?" -> colours -> "oooo ok that one"_
 
 The workflow that just works.
+
+---
+## License
+
+`@gesslar/colours` is released into the public domain under the [0BSD](LICENSE.txt).
