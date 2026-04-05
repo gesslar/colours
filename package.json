@@ -7,7 +7,7 @@
     "url": "https://gesslar.dev"
   },
   "version": "0.8.0",
-  "license": "Unlicense",
+  "license": "0BSD",
   "homepage": "https://github.com/gesslar/colours#readme",
   "repository": {
     "type": "git",
@@ -23,7 +23,6 @@
     "trifle",
     "monkeynado"
   ],
-  "packageManager": "pnpm@10.27.0",
   "type": "module",
   "main": "src/Colours.js",
   "bin": "src/cli.js",
@@ -36,10 +35,10 @@
   "files": [
     "src/",
     "types/",
-    "UNLICENSE.txt"
+    "LICENSE.txt"
   ],
   "engines": {
-    "node": ">=22"
+    "node": ">=24.11.0"
   },
   "scripts": {
     "lint": "eslint src/",
@@ -48,18 +47,18 @@
     "test:visual": "node test/test.js",
     "test-colours": "node src/cli.js",
     "clean": "rm -rfv ./dist",
-    "build": "pnpm run clean && mkdir -pv ./dist && pnpm pack --pack-destination ./dist/",
-    "update": "pnpm up --latest --recursive",
-    "submit": "pnpm publish --access public --//registry.npmjs.org/:_authToken=\"${NPM_ACCESS_TOKEN}\"",
+    "build": "mkdir -pv ./dist && npm pack --pack-destination ./dist/",
+    "update": "npx npm-check-updates -u && npm install",
+    "submit": "npm publish --access public --//registry.npmjs.org/:_authToken=\"${NPM_ACCESS_TOKEN}\"",
     "pr": "gt submit -p --ai",
-    "patch": "pnpm version patch",
-    "minor": "pnpm version minor",
-    "major": "pnpm version major",
+    "patch": "npm version patch",
+    "minor": "npm version minor",
+    "major": "npm version major",
     "types": "node -e \"require('fs').rmSync('types',{recursive:true,force:true});\" && tsc -p tsconfig.types.json"
   },
   "devDependencies": {
-    "@gesslar/uglier": "^2.0.0",
-    "eslint": "^10.0.2",
+    "@gesslar/uglier": "^2.4.0",
+    "eslint": "^10.2.0",
     "typescript": "^6.0.2"
   }
 }
