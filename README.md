@@ -193,6 +193,7 @@ _"I want green here, but which green?" -> colours -> "oooo ok that one"_
 The workflow that just works.
 
 ---
+
 ## License
 
-`@gesslar/colours` is released into the public domain under the [0BSD](LICENSE.txt).
+`@gesslar/colours` is released under the [0BSD](LICENSE.txt).
